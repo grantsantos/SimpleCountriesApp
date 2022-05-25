@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/countriesFragment2">
+    <fragment
+        android:id="@+id/countriesFragment2"
+        android:name="com.santos.grant.coding.simplecountriesapp.countries_screen.CountriesFragment"
+        android:label="Countries"
+        tools:layout="@layout/fragment_countries">
+        <action
+            android:id="@+id/action_countriesFragment2_to_countryDetailFragment"
+            app:destination="@id/countryDetailFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryDetailFragment"
+        android:name="com.santos.grant.coding.simplecountriesapp.country_detail_screen.CountryDetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_country_detail">
+        <argument
+            android:name="country"
+            app:argType="com.santos.grant.coding.simplecountriesapp.common.data.local.entity.CountryEntity" />
+    </fragment>
+</navigation>
